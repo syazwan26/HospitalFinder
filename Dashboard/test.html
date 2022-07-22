@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module">
+         // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyDeqXHMoUab2jV5BhZAgsX8tlizhvdzoqQ",
+    authDomain: "project-b75ae.firebaseapp.com",
+    databaseURL: "https://project-b75ae-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "project-b75ae",
+    storageBucket: "project-b75ae.appspot.com",
+    messagingSenderId: "458168904429",
+    appId: "1:458168904429:web:e5fcae34f842e95eabfae4"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+
+        const dbRef = ref(getDatabase(app));
+        get(child(dbRef, 'userName/')).then((snapshot) => {
+         if (snapshot.exists()) {
+             console.log(snapshot.val());
+         } else {
+         console.log("No data available");
+         }
+        }).catch((error) => {
+             console.error(error);
+        });
+
+
+      </script>
+</head>
+<body>
+    
+</body>
+</html>
